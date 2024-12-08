@@ -1,0 +1,616 @@
+:root {
+
+
+
+    --primary-color: #2c3e50;
+
+
+
+    --secondary-color: #3498db;
+
+
+
+    --background-color: #f5f6fa;
+
+
+
+    --section-background: #ffffff;
+
+
+
+    --text-color: #2c3e50;
+
+
+
+    --spacing-unit: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+body {
+
+
+
+    font-family: 'Segoe UI', system-ui, sans-serif;
+
+
+
+    background-color: var(--background-color);
+
+
+
+    margin: 0;
+
+
+
+    padding: 0;
+
+
+
+    color: var(--text-color);
+
+
+
+    line-height: 1.6;
+
+
+
+}
+
+
+
+
+
+
+
+header {
+
+
+
+    background-color: var(--primary-color);
+
+
+
+    color: white;
+
+
+
+    padding: calc(var(--spacing-unit) * 2);
+
+
+
+    text-align: center;
+
+
+
+}
+
+
+
+
+
+
+
+.description {
+
+
+
+    max-width: 600px;
+
+
+
+    margin: 1rem auto;
+
+
+
+    opacity: 0.9;
+
+
+
+}
+
+
+
+
+
+
+
+.model-navigation {
+
+
+
+    background: var(--section-background);
+
+
+
+    padding: 1rem;
+
+
+
+    position: sticky;
+
+
+
+    top: 0;
+
+
+
+    z-index: 100;
+
+
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
+
+    margin-top: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+.model-navigation ul {
+
+
+
+    list-style: none;
+
+
+
+    padding: 0;
+
+
+
+    margin: 0;
+
+
+
+    display: flex;
+
+
+
+    justify-content: center;
+
+
+
+    flex-wrap: wrap;
+
+
+
+    gap: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+.model-navigation a {
+
+
+
+    color: var(--primary-color);
+
+
+
+    text-decoration: none;
+
+
+
+    padding: 0.5rem 1rem;
+
+
+
+    border-radius: 4px;
+
+
+
+    transition: background-color 0.3s;
+
+
+
+}
+
+
+
+
+
+
+
+.model-navigation a:hover {
+
+
+
+    background-color: var(--secondary-color);
+
+
+
+    color: white;
+
+
+
+}
+
+
+
+
+
+
+
+.model-section {
+
+
+
+    margin: 2rem auto;
+
+
+
+    padding: 2rem;
+
+
+
+    background: var(--section-background);
+
+
+
+    border-radius: 8px;
+
+
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
+
+    max-width: 1200px;
+
+
+
+}
+
+
+
+
+
+
+
+.vocal-section {
+
+
+
+    margin: 2rem 0;
+
+
+
+}
+
+
+
+
+
+
+
+.inference-section {
+
+
+
+    margin: 2rem auto;
+
+
+
+    max-width: 1200px;
+
+
+
+    padding: 2rem;
+
+
+
+    background: var(--section-background);
+
+
+
+    border-radius: 8px;
+
+
+
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+
+
+}
+
+
+
+
+
+
+
+.inference-section h2 {
+
+
+
+    color: var(--primary-color);
+
+
+
+    margin-bottom: 2rem;
+
+
+
+    padding-bottom: 0.5rem;
+
+
+
+    border-bottom: 2px solid var(--secondary-color);
+
+
+
+}
+
+
+
+
+
+
+
+.input-section, .generated-section {
+
+
+
+    margin: 2rem 0;
+
+
+
+}
+
+
+
+
+
+
+
+.input-section h3, .generated-section h3 {
+
+
+
+    color: var(--secondary-color);
+
+
+
+    margin: 1.5rem 0;
+
+
+
+}
+
+
+
+
+
+
+
+.input-grid {
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+
+    gap: 1.5rem;
+
+
+
+    padding: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+.track-grid {
+
+
+
+    display: grid;
+
+
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+
+
+    gap: 1.5rem;
+
+
+
+    padding: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+.track-item {
+
+
+
+    background: var(--background-color);
+
+
+
+    padding: 1rem;
+
+
+
+    border-radius: 6px;
+
+
+
+    transition: transform 0.2s;
+
+
+
+}
+
+
+
+
+
+
+
+.track-item:hover {
+
+
+
+    transform: translateY(-2px);
+
+
+
+}
+
+
+
+
+
+
+
+.track-item label {
+
+
+
+    display: block;
+
+
+
+    margin-bottom: 0.5rem;
+
+
+
+    font-weight: 500;
+
+
+
+}
+
+
+
+
+
+
+
+audio {
+
+
+
+    width: 100%;
+
+
+
+    margin: 0.5rem 0;
+
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+
+
+    .track-grid {
+
+
+
+        grid-template-columns: 1fr;
+
+
+
+    }
+
+
+
+    
+
+
+
+    .model-navigation ul {
+
+
+
+        flex-direction: column;
+
+
+
+        align-items: center;
+
+
+
+    }
+
+
+
+} 
+
+
+
+.active {
+
+    background-color: var(--secondary-color);
+
+    color: white !important;
+
+}
+
+
+
+.welcome-section {
+
+    text-align: center;
+
+    padding: 3rem 1rem;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+} 
+
+
+

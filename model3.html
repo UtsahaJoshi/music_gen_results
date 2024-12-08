@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joint Model (Standardized Full)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-md py-6 px-4">
+        <h1 class="text-4xl font-bold text-center text-gray-800">Joint Model (Standardized Full)</h1>
+        <nav class="mt-6">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Home</a></li>
+                <li><a href="model1.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Independent GPT-2 (Less)</a></li>
+                <li><a href="model2.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Independent GPT-2 (Full)</a></li>
+                <li><a href="model3.html" class="px-4 py-2 rounded-lg bg-blue-500 text-white">Joint Model</a></li>
+                <li><a href="model4.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Cross Attention</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+
+        <!-- Introduction Section -->
+        <section class="intro-section bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Joint Model: Conditional Generation with Instrumental Tokens</h2>
+            <p class="text-gray-600 mb-4">This model was trained using the chunked dataset with both vocal and instrumental tracks. It conditions on unique instrumental tokens to guide the generation of specific track classes, such as hi-hat, kick, bass, and full instrumental. By conditioning on these tokens, the model learns to generate all instrumental tracks in a single unified model, rather than training individual models for each track class.</p>
+            <p class="text-gray-600 mb-4">Similar to the previous models, this approach uses positional embeddings to align temporal information, but it adds an additional layer of conditioning through the instrument tokens, enabling the model to generate specific tracks with better structure and coherence across the entire instrumental set.</p>
+        </section>
+
+        <!-- Inference 3 -->
+        <section class="inference-section bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Inference 3</h2>
+
+            <div class="input-section mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Input</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Vocal</label>
+                        <audio controls class="w-full">
+                            <source src="inference_audio/3/inference.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Reference Beat</label>
+                        <audio controls class="w-full">
+                            <source src="inference_audio/3/inference_posemb.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="generated-section mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Generated</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Hi-Hat</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/hi_hat_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Kick</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/kick_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Snare</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/snare_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Clap</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/clap_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Bass</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/bass_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Drums</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/drums_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Keys</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/keys_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Full Instrumental</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/full_instrumental_generated.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mixes-section">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">Mixes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Vocal Isolated Stems Mix</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/vocal_isolatedstems_mix.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="track-item bg-gray-50 p-4 rounded-lg">
+                        <label class="block text-gray-700 font-medium mb-2">Vocal Full Instrumental Mix</label>
+                        <audio controls class="w-full">
+                            <source src="joint_model_standardized_full/3/vocal_full_instrumental_mix.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white shadow-md mt-8 py-4">
+        <p class="text-center text-gray-600">© 2024 Utsaha Joshi - All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

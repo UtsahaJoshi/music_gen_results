@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Generation Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-6 px-4">
+        <h1 class="text-4xl font-bold text-center text-gray-800">Audio Generation Showcase</h1>
+        <p class="text-center text-gray-600 mt-2">Comparing different audio generation models and their outputs</p>
+    </header>
+
+    <nav class="bg-white shadow-sm mt-4">
+        <ul class="flex justify-center space-x-4 py-4">
+            <li><a href="model1.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Independent GPT-2 (Less)</a></li>
+            <li><a href="model2.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Independent GPT-2 (Full)</a></li>
+            <li><a href="model3.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Joint Model</a></li>
+            <li><a href="model4.html" class="px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors">Cross Attention</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="welcome-section bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Welcome to the Audio Generation Showcase</h2>
+            <p class="text-gray-600">Click on any model above to view its generated outputs.</p>
+        </div>
+
+        <!-- Project Title and Description -->
+        <section class="project-overview bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Rap Acapella Vocal-Guided Music Generation Using Deep Learning</h2>
+            <p class="text-gray-600">This project aims to create an AI-powered tool that assists music producers in co-producing tracks by generating isolated stems (hi-hat, kick, snare, clap, bass, drums, keys, and full instrumental) based on vocal acapella inputs. By analyzing rhythmic features from a reference track, the model seamlessly produces instrumentals that complement the vocal performance. This tool empowers producers to collaborate with AI, enhancing creativity and streamlining the music production process.</p>
+        </section>
+
+        <!-- Dataset Preprocessing Overview -->
+        <section class="dataset-section bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Dataset Preprocessing Overview</h2>
+            
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Data Collection</h3>
+                    <p class="text-gray-600">The dataset consists of 18 carefully curated music projects collected from producers, each containing isolated stems for vocal, hi-hat, kick, snare, clap, bass, melodies, and full instrumental tracks.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Standardization Process</h3>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                        <li>Projects were manually trimmed using a DAW to isolate single verse durations</li>
+                        <li>Melody stems were converted to MIDI using SampLab AI tool</li>
+                        <li>MIDI files were loaded into FL Studio's FL Keys instrument for consistent keys track generation</li>
+                        <li>Each folder contains standardized stems: vocal, hi-hat, kick, snare, clap, bass, drums, keys, and full instrumental</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Technical Processing</h3>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                        <li>Musical keys (major/minor) are one-hot encoded for each sample</li>
+                        <li>Beat and downbeat timings extracted using Madmom library</li>
+                        <li>Positional embeddings generated using sine and cosine ramps</li>
+                        <li>Audio tracks segmented into 10-second chunks</li>
+                        <li>Audio encoded using Meta's EnCodec model</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-3">Output Organization</h3>
+                    <ul class="list-disc pl-6 text-gray-600 space-y-2">
+                        <li>Aligned positional embeddings with global attributes</li>
+                        <li>Encoded audio representations for each segment</li>
+                        <li>Processed data saved as NumPy files</li>
+                        <li>CSV summaries for track classes, global attributes, and sample features</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white shadow-md mt-8 py-4">
+        <p class="text-center text-gray-600">© 2024 Utsaha Joshi - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
